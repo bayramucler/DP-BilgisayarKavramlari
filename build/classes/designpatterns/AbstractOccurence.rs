@@ -1,3 +1,0 @@
-designpatterns.dizi
-designpatterns.bolum
-designpatterns.AbstractOccurence

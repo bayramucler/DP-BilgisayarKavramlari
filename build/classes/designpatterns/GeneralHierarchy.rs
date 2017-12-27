@@ -1,3 +1,0 @@
-designpatterns.GeneralHierarchy
-designpatterns.yonetici
-designpatterns.calisan
