@@ -13,4 +13,5 @@ public class yeniclass {
     
     public static void main(String args[]){
        System.out.println("deneme");
+        //bu açıklama satırı github üzerinden eklendi
 }}
