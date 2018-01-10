@@ -13,81 +13,105 @@ import java.util.LinkedList;
  * @author byrm
  */
 public class tests {
-      
-    public static String repeat(char c,int i)
-         {
-         String tst = "";
-         for(int j = 0; j < i; j++)
-             {
-             tst = tst+c;
-         }
-         return tst;
-     }
+ 
+   
        
+    static void complexity(){
+        int n = 16;
+       
+        int s = 0;
+        
+//        for(int i=0;i<=n;i++){     
+//          for(int j=0;j<m;j++){
+//              
+//        s++;
+//        System.out.println(s);
+//        }
+//        }
+
+
+//for(int i = n; i > 0; i/=2){
+// s++;
+//        System.out.println(i);
+//
+// }
+//
+//
+//for(int i = 1; i<=n; i*=2){
+//         System.out.println(i);
+//
+//}
+
+ 
+  
+   
+
+
+    
+    }
     
     static char firstRepeat (String myString){
         
-  char[] myCharArray = myString.toCharArray();//
-  for (int i = 0; i < myString.length(); i++) {
-   for (int j = i + 1; j < myString.length(); j++) {
-    if (myCharArray[i] == myCharArray[j] ) {
-     return myCharArray[j];
+  char[] myCharArray = myString.toCharArray();            // c1   1 times
+  for (int i = 0; i < myString.length(); i++) {           // c2   n+1 times (so, according to myString.length times)              
+      for (int j = i + 1; j < myString.length(); j++) {   // c3   n+n*(n-1)/2 times (it's also according to myString.length times but the counter j=i+1.)
+    if (myCharArray[i] == myCharArray[j] ) {              // c4   n*(n-1)/2 times
+     return myCharArray[j];                               // c5 <=n*(n-1)/2 times
     }
    }
   }
-        return ' ' ;
+        return ' ' ;                                       // c6 1 times
     }
     
+    // c1 + c2*(n+1) + c3*(n+n*(n-1)/2) + c4*(n*(n-1)/2) + c5*(n*(n-1)/2) + c6
+    // the algorithm requires time proportional to n*n, it is O(n*n)
+    // space comp: according to size of myCharArray(myString.length), so it is O(n).
+    
     static void divisibilityRule (String [] array){
-        for (int i = 1; i < array.length+1; i++) {
-  
-    if(i%28==0){
-        array[i-1] = "fs";
+        for (int i = 1; i < array.length+1; i++) { //c1   n+1 times
+    if(i%28==0){                                   //c2   n times
+        array[i-1] = "fs";                         //c3 <=n times
     }
-    else if(i%4==0){
-    array[i-1] = "f";
-    } else if( i%7==0){
-      array[i-1] = "s";
+    else if(i%4==0){                               //c4   n times
+    array[i-1] = "f";                              //c5 <=n times
+    } else if( i%7==0){                            //c6   n times
+      array[i-1] = "s";                            //c7 <=n times
 
     }
      
      else{
-        array[i-1] = String.valueOf(i);
+        array[i-1] = String.valueOf(i);            //c8  n times
     }
     
     }
         
         
-    for (int i = 0; i < array.length;i++){
+    for (int i = 0; i < array.length;i++){   // c9  n+1 times
+        System.out.print(array[i]+", ");    //c10   n times
                
-               System.out.print(array[i]+", ");
     }
+    
+    // c1*(n+1) + c2*n + c3*n + c4*n + c5*n + c6*n + c7*n + c8*n + c9*(n+1) + c10 * n
+    // c1*n + c2*n + c3*n + c4*n + c5*n + c6*n + c7*n + c8*n + c9*n + c10*n  c1 + c9 
+    // (c1 + c2 + c3 + c4 + c5 + c6 + c7 + c8 + c9 + c10)*n + c1+c9
+    // a*n + b 
+    // O(n)
+     // space comp: according to size of array, so it is O(n).
     }
     
     
-    static void linkedMeth(LinkedList list){
-        
-        
-    }
+  
    
     
     public static void main(String args[]){
      
-       // divisibilityRule(new String[100]);
+      //    divisibilityRule(new String[100]);
       //  System.out.println(firstRepeat("Intergalactic")); 
-        
-  int count = 0;
-for (int i = 100; i > 0; i /= 2) 
-    for (int j = 0; j < i; j++) 
-        count++;
-     
-        System.out.println(count);
+      complexity(); 
+  
+
      
 }
-
-
-
-
 
 
 
