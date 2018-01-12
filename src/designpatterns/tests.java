@@ -28,6 +28,7 @@ public class tests {
 //        System.out.println(s);
 //        }
 //        }
+     //eklendi
 
 
 //for(int i = n; i > 0; i/=2){
