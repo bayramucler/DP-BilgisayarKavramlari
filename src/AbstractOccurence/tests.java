@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package designpatterns;
+package AbstractOccurence;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -14,6 +14,11 @@ import java.util.LinkedList;
  */
 public class tests {
  
+    /*
+    ******************
+    time and space complexity examples
+    *****************
+    */
    
        
     static void complexity(){
